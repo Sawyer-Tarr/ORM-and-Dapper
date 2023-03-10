@@ -12,6 +12,7 @@ namespace ORM
 
 
         public void CreateProduct(string name, double price, int categoryID);
+        public void UpdateProduct(Product product);
        
 
     }

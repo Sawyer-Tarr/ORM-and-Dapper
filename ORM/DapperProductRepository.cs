@@ -19,12 +19,18 @@ namespace ORM
 
         public void CreateProduct(string name, double price, int categoryID)
         {
-            throw new NotImplementedException();
+            _conn.Execute("INSERT INTO products (Name, Price, CategoryID) VALUES (@name, @price, @categoryID);",
+                new { name = name, price = price, categoryID = categoryID });
         }
 
         public IEnumerable<Product> GetAllProducts()
         {
             return _conn.Query<Product>("SELECT * FROM products;");
+        }
+
+        public void UpdateProduct(Product product)
+        {
+            throw new NotImplementedException();
         }
     }
 }
